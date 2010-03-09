@@ -1,0 +1,3 @@
+.gitignore
+log
+db/*.sqlite3
