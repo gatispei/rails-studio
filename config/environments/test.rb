@@ -1,4 +1,6 @@
 # Settings specified here will take precedence over those in config/environment.rb
+config.gem 'shoulda', :version => '>=2.10.3'
+config.gem 'factory_girl', :version => '>=1.2.3'
 
 # The test environment is used exclusively to run your application's
 # test suite.  You never need to work with it otherwise.  Remember that
