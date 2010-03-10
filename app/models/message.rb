@@ -5,5 +5,7 @@ class Message < ActiveRecord::Base
 #                    }
 
   named_scope :urgent, :conditions => {:priority => 'urgent'}
+
+    has_one :user
                       
 end
