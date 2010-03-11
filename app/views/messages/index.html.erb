@@ -1,4 +1,31 @@
 <% content_for :title do %>Messages<% end %>
 
-<h2>Hello</h2>
-you are in!
+<h1>Listing messages</h1>
+
+<table>
+  <tr>
+  </tr>
+
+<% @messages.each do |message| %>
+	<tr>
+	  <td>Message: </td>
+	  <td colspan=2><%=h message.body %></td>
+	
+	</tr>
+	<tr>
+	  <td>Pririty: </td>
+	  <td colspan=2><%=h message.priority %></td>
+	
+	</tr>
+	
+  <tr>
+    <td><%= link_to 'Show', message %></td>
+    <td><%= link_to 'Edit', edit_message_path(message) %></td>
+    <td><%= link_to 'Destroy', message, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New message', new_message_path %>

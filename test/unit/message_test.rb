@@ -23,8 +23,7 @@ class MessageTest < ActiveSupport::TestCase
       user1 = Factory.create(:user)
       user2 = Factory.create(:user, :first_name => 'John', 
                                     :last_name =>'Doe',
-                                    :email => 'joe@testing.com'
-                                    )
+                                    :email => 'joe@testing.com')
 
       message_user1 = Factory.create(:message, :body => "Message 1 for User 1",
                                                 :user => user1)
