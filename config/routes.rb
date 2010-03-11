@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :users
+
   Clearance::Routes.draw(map)
   map.resources :items
 
