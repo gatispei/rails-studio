@@ -1,0 +1,47 @@
+<% content_for :title do %>Edit Team<% end %>
+<%= link_to "Team Index", teams_path %>
+<br />
+<br />
+
+<b>Editing Team:</b>&nbsp;<%= @team.name %>
+<br />
+<br />
+
+<% form_for @team,  :url => { :controller => "teams", :action => "update" } do |f| %>
+    <b>Name:</b>&nbsp;<%= f.text_field :name %>
+    <br />
+    <br />
+    <div>
+        <b>Members:</b>
+        <br />
+        <table>
+          <tbody>
+            <tr>
+              <th><b>User Name</b></th>
+              <th></th>
+              <th><b>First Name</b></th>
+              <th></th>
+              <th><b>Last Name</b></th>
+              <th></th>
+              <th><b>EMail</b></th>
+            </tr>
+            <% for user in @team.users do %>
+                <tr>
+                  <td><%=h user.name %></td>
+                  <td>&nbsp;&nbsp;&nbsp;</td>
+                  <td><%=h user.first_name %></td>
+                  <td>&nbsp;&nbsp;&nbsp;</td>
+                  <td><%=h user.last_name %></td>
+                  <td>&nbsp;&nbsp;&nbsp;</td>
+                  <td><%=h user.email %></td>
+                </tr>
+            <% end %>
+          </tbody>
+        </table>
+    </div>
+    
+    <br />
+    <br />
+    <%= submit_tag %>
+ <% end %>
+

@@ -1,0 +1,31 @@
+<% content_for :title do %>Teams<% end %>
+
+<%= link_to("New Team", "teams/new") %>
+<div>
+    <br/>
+    <table>
+      <tbody>
+        <tr>
+          <th><b>Name</b></th>
+          <th></th>
+          <th><b>Members</b></th>
+          <th></th>
+          <th><b>Action</b></th>
+        </tr>
+        <% for team in @teams do %>
+            <tr>
+              <td><%=h team.name %></td>
+              <td>&nbsp;&nbsp;&nbsp;</td>
+              <td>Eventually we will show the members here</td>
+              <td>&nbsp;&nbsp;&nbsp;</td>
+              <td>
+                <%= link_to "Edit", edit_team_path(team) %>,
+                <%= link_to "Remove", team, :method => :delete , :confirm => "Remove the Team '#{team.name}'?" %>
+
+              </td>
+            </tr>
+        <% end %>
+      </tbody>
+    </table>
+</div>
+

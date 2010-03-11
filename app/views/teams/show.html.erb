@@ -1,0 +1,37 @@
+<% content_for :title do %>Show Team<% end %>
+<%= link_to "Edit Team", edit_team_path(@team) %>
+<br />
+<br />
+
+<b>Name:</b>&nbsp;<%= @team.name %>
+<br />
+<br />
+    <div>
+        <b>Members:</b>
+        <br />
+        <table>
+          <tbody>
+            <tr>
+              <th><b>User Name</b></th>
+              <th></th>
+              <th><b>First Name</b></th>
+              <th></th>
+              <th><b>Last Name</b></th>
+              <th></th>
+              <th><b>EMail</b></th>
+            </tr>
+            <% for user in @team.users do %>
+                <tr>
+                  <td><%=h user.name %></td>
+                  <td>&nbsp;&nbsp;&nbsp;</td>
+                  <td><%=h user.first_name %></td>
+                  <td>&nbsp;&nbsp;&nbsp;</td>
+                  <td><%=h user.last_name %></td>
+                  <td>&nbsp;&nbsp;&nbsp;</td>
+                  <td><%=h user.email %></td>
+                </tr>
+            <% end %>
+          </tbody>
+        </table>
+    </div>
+

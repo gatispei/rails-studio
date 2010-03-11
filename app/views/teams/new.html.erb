@@ -1,0 +1,29 @@
+<% content_for :title do %>New Team<% end %>
+<%= link_to "Team Index", teams_path %>
+<br />
+<br />
+
+<div>
+    <% form_for @team,  :url => { :controller => "teams", :action => "create" } do |f| %>
+        <%= f.error_messages %>
+        <%= f.label :name %>&nbsp;<%= f.text_field :name %>
+        <br />
+        <br />
+
+        <div>
+            <table>
+                <tbody id="users">
+                    <% f.fields_for(:users) do |u| %>
+                        <%= render :partial => "user_form", :locals => { :f => u } %>
+                    <% end %>
+                </tbody>
+            </table>
+
+            <%= button_to_add_a_user(f) %>
+        </div>
+        <br />
+        <hr />
+        <br />
+        <%= submit_tag %>
+    <% end %>
+</div>
