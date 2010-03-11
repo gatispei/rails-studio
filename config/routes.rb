@@ -4,6 +4,8 @@ ActionController::Routing::Routes.draw do |map|
 
     map.root :controller => "messages", :action => "index"
 
+    map.resources :teams
+
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
