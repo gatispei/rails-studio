@@ -1,0 +1,7 @@
+
+<% form_for(:bike_trail, :url  => "parse_gpx_trace",
+            :html => { :multipart => true }) do |f| -%>
+GPS Trace:
+<%= f.file_field :data, :size => 30 %>
+<%= submit_tag 'Upload' %>
+<% end -%>
